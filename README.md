@@ -42,7 +42,7 @@ npm install
 
 ```env
 MONGODB_URI=mongodb://localhost:27017/sweetshop
-JWT_SECRET=your-super-secret-jwt-key
+JWT_SECRET=secret-jwt-key
 ```
 
 ### Seed Database (optional)
@@ -89,18 +89,10 @@ public/     # Images/assets
 
 ## My AI Usage
 
-**Tool**: v0 by Vercel
+**Tool**: v0 by Vercel, cursor, gemini
 
-**AI Contribution**: Architecture, frontend components, backend APIs, JWT auth, MongoDB connection, seed scripts, and documentation
+**AI Contribution**: Architecture, To connect and fixing the error when we signin
 
 **Manual Work**: Requirements, design tweaks, testing, environment setup
 
-**Impact**: ~85% code AI-generated; final code reviewed, tested, and customized
-
-## License
-
-MIT – Free for personal or commercial use
-
----
-
-✅ Built with ❤️ using AI assistance from v0 by Vercel
+Built with ❤️ using AI assistance from BHAVANA...
