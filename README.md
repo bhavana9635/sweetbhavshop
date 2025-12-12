@@ -19,13 +19,14 @@ A full-stack sweet shop management system built with Next.js, TypeScript, MongoD
 ## Screenshots
 
 ### Landing Page
-![Landing Page](screenshots/landing.png)
+<img width="1882" height="865" alt="image" src="https://github.com/user-attachments/assets/72382781-3459-46bc-bd4a-44b9b7ede727" />
 
 ### Shop Dashboard
-![Shop Dashboard](screenshots/shop.png)
+<img width="1615" height="847" alt="image" src="https://github.com/user-attachments/assets/dbe370a3-22f6-49b3-90d9-ec1667a9b493" />
+
 
 ### Admin Panel
-![Admin Panel](screenshots/admin.png)
+<img width="1616" height="789" alt="image" src="https://github.com/user-attachments/assets/f0631490-bee0-4394-968e-02567cb228f9" />
 
 ## Quick Setup
 
