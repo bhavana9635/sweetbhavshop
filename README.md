@@ -1,112 +1,105 @@
-Sweet Shop Management System 🍬
+# Sweet Shop Management System 🍬
 
 A full-stack sweet shop management system built with Next.js, TypeScript, MongoDB, and Node.js. Features a candy-themed responsive UI, user authentication, sweet browsing, purchasing, and an admin panel for inventory management.
 
-Features
+## Features
 
-User Authentication: JWT with bcrypt and HTTP-only cookies
+- **User Authentication**: JWT with bcrypt and HTTP-only cookies
+- **Browse & Purchase Sweets**: Search, filter, and buy with real-time inventory updates
+- **Admin Panel**: Add, edit, delete, and restock sweets
+- **Role-Based Access**: First registered user is admin
+- **Responsive UI**: Works on all devices with a candy-themed design
 
-Browse & Purchase Sweets: Search, filter, and buy with real-time inventory updates
+## Tech Stack
 
-Admin Panel: Add, edit, delete, and restock sweets
+- **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS, shadcn/ui
+- **Backend**: Node.js, Next.js API Routes, MongoDB
+- **Auth & Security**: JWT, bcrypt, HTTP-only cookies
 
-Role-Based Access: First registered user is admin
+## Screenshots
 
-Responsive UI: Works on all devices with a candy-themed design
+### Landing Page
+![Landing Page](screenshots/landing.png)
 
-Tech Stack
+### Shop Dashboard
+![Shop Dashboard](screenshots/shop.png)
 
-Frontend: Next.js 16, React 19, TypeScript, Tailwind CSS, shadcn/ui
+### Admin Panel
+![Admin Panel](screenshots/admin.png)
 
-Backend: Node.js, Next.js API Routes, MongoDB
+## Quick Setup
 
-Auth & Security: JWT, bcrypt, HTTP-only cookies
+### Clone & Install Dependencies
 
-Screenshots
-
-Landing Page
-
-
-Shop Dashboard
-
-
-Admin Panel
-
-
-Quick Setup
-
-Clone & Install Dependencies
-
+```bash
 git clone <your-repo-url>
 cd sweet-shop
 npm install
+```
 
+### Configure Environment Variables (.env.local)
 
-Configure Environment Variables (.env.local)
-
+```env
 MONGODB_URI=mongodb://localhost:27017/sweetshop
 JWT_SECRET=your-super-secret-jwt-key
+```
 
+### Seed Database (optional)
 
-Seed Database (optional)
-
+```bash
 npx tsx scripts/seed-database.ts
+```
 
+Creates sample sweets and default admin: `admin@sweetshop.com` / `admin123`
 
-Creates sample sweets and default admin: admin@sweetshop.com / admin123
+### Run App
 
-Run App
-
+```bash
 npm run dev
+```
 
+Open [http://localhost:3000](http://localhost:3000)
 
-Open http://localhost:3000
+## Project Structure
 
-Project Structure
+```
 app/        # Pages & API routes
 components/ # UI components
 lib/        # DB connection & auth helpers
 scripts/    # Seed database
 public/     # Images/assets
+```
 
-API Endpoints
+## API Endpoints
 
-Auth:
+### Auth:
+- `POST /api/auth/register` – Register
+- `POST /api/auth/login` – Login
+- `POST /api/auth/logout` – Logout
+- `GET /api/auth/me` – Current user
 
-POST /api/auth/register – Register
+### Sweets:
+- `GET /api/sweets` – List sweets
+- `POST /api/sweets` – Add sweet (Admin)
+- `PUT /api/sweets/:id` – Update sweet (Admin)
+- `DELETE /api/sweets/:id` – Delete sweet (Admin)
+- `POST /api/sweets/:id/purchase` – Purchase sweet
+- `POST /api/sweets/:id/restock` – Restock sweet (Admin)
 
-POST /api/auth/login – Login
+## My AI Usage
 
-POST /api/auth/logout – Logout
+**Tool**: v0 by Vercel
 
-GET /api/auth/me – Current user
+**AI Contribution**: Architecture, frontend components, backend APIs, JWT auth, MongoDB connection, seed scripts, and documentation
 
-Sweets:
+**Manual Work**: Requirements, design tweaks, testing, environment setup
 
-GET /api/sweets – List sweets
+**Impact**: ~85% code AI-generated; final code reviewed, tested, and customized
 
-POST /api/sweets – Add sweet (Admin)
-
-PUT /api/sweets/:id – Update sweet (Admin)
-
-DELETE /api/sweets/:id – Delete sweet (Admin)
-
-POST /api/sweets/:id/purchase – Purchase sweet
-
-POST /api/sweets/:id/restock – Restock sweet (Admin)
-
-My AI Usage
-
-Tool: v0 by Vercel
-
-AI Contribution: Architecture, frontend components, backend APIs, JWT auth, MongoDB connection, seed scripts, and documentation
-
-Manual Work: Requirements, design tweaks, testing, environment setup
-
-Impact: ~85% code AI-generated; final code reviewed, tested, and customized
-
-License
+## License
 
 MIT – Free for personal or commercial use
+
+---
 
 ✅ Built with ❤️ using AI assistance from v0 by Vercel
