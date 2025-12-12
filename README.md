@@ -16,6 +16,10 @@ A full-stack sweet shop management system built with Next.js, TypeScript, MongoD
 - **Backend**: Node.js, Next.js API Routes, MongoDB
 - **Auth & Security**: JWT, bcrypt, HTTP-only cookies
 
+## Deplyoed Using vercel
+
+- **Deployed LINK** : https://sweetbhavshop-git-main-pes2ug22cs128s-projects.vercel.app
+
 ## Screenshots
 
 ### Landing Page
