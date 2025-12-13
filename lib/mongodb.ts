@@ -7,8 +7,9 @@ if (!process.env.MONGODB_URI) {
 const uri = process.env.MONGODB_URI
 const options = {
   maxPoolSize: 10, // Maintain up to 10 socket connections
-  serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+  serverSelectionTimeoutMS: 10000, // Increased timeout for production
   socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+  connectTimeoutMS: 10000, // Connection timeout
 }
 
 let client: MongoClient
@@ -34,6 +35,11 @@ if (process.env.NODE_ENV === "development") {
 export default clientPromise
 
 export async function getDatabase(): Promise<Db> {
-  const client = await clientPromise
-  return client.db("sweet_shop")
+  try {
+    const client = await clientPromise
+    return client.db("sweet_shop")
+  } catch (error) {
+    console.error("MongoDB connection error:", error)
+    throw new Error(`Failed to connect to database: ${error instanceof Error ? error.message : "Unknown error"}`)
+  }
 }

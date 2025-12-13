@@ -84,10 +84,23 @@ export async function POST(request: NextRequest) {
     return response
   } catch (error) {
     console.error("Registration error:", error)
+    
+    // Log full error details for debugging
+    if (error instanceof Error) {
+      console.error("Error name:", error.name)
+      console.error("Error message:", error.message)
+      console.error("Error stack:", error.stack)
+    }
+    
+    // Return more detailed error in development, generic in production
+    const errorMessage = process.env.NODE_ENV === "development" 
+      ? (error instanceof Error ? error.message : "Unknown error")
+      : "Internal server error. Please check server logs."
+    
     return NextResponse.json(
       {
         error: "Internal server error",
-        details: error instanceof Error ? error.message : "Unknown error",
+        details: errorMessage,
       },
       { status: 500 },
     )
